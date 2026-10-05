@@ -1,0 +1,14 @@
+{
+  "name": "Alex Example",
+  "headline": "Backend Engineer | Python, APIs & Cloud",
+  "email": "alex@example.com",
+  "phone": "+49 30 1234567",
+  "links": [
+    {"label": "alexexample.dev", "url": "https://alexexample.dev"},
+    {"label": "github.com/alexexample", "url": "https://github.com/alexexample"},
+    {"label": "linkedin.com/in/alexexample", "url": "https://linkedin.com/in/alexexample"}
+  ],
+  "photo": "",
+  "pdf_name": "CV_AlexExample",
+  "output_dir": "out"
+}

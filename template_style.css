@@ -1,0 +1,75 @@
+/* Values taken from the original Word CV (styles.xml, numbering.xml, document.xml), not guessed.
+   twips / 20 = pt. docDefaults: Spectral 9pt, justified, ind left=90 hanging=270 (first line -9pt). */
+
+@font-face { font-family: "Spectral"; src: url("fonts/Spectral-regular.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Spectral"; src: url("fonts/Spectral-bold.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Spectral"; src: url("fonts/Spectral-italic.ttf"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Spectral"; src: url("fonts/Spectral-boldItalic.ttf"); font-weight: 700; font-style: italic; }
+@font-face { font-family: "Spectral SemiBold"; src: url("fonts/SpectralSemiBold-regular.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Spectral SemiBold"; src: url("fonts/SpectralSemiBold-bold.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Spectral ExtraBold"; src: url("fonts/SpectralExtraBold-bold.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Spectral ExtraBold"; src: url("fonts/SpectralExtraBold-boldItalic.ttf"); font-weight: 700; font-style: italic; }
+
+@page {
+  size: 595.3pt 841.9pt;                 /* A4 */
+  margin: 13.5pt 28.5pt 25.2pt 31.5pt;   /* top right bottom left */
+}
+
+body {
+  font-family: "Spectral", serif;
+  font-size: 9pt;                        /* docDefaults sz=18 */
+  color: #000;
+  text-align: justify;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---- Header: photo floats left, Title/Subtitle/contact are jc=right ---- */
+.header { overflow: hidden; }
+.photo { float: left; width: 99pt; height: 99pt; object-fit: cover; margin: 0 10pt 0 -6.75pt; }
+.header-text { text-align: right; }
+.header-text .title {
+  font-family: "Spectral SemiBold", serif; font-size: 24pt; margin: 0; line-height: 1.1;
+}
+.header-text .subtitle {
+  font-family: "Spectral ExtraBold", serif; font-weight: 700; font-size: 11pt; margin: 0;
+}
+.header-text .contact { font-size: 9.5pt; margin: 10pt 0 0 0; }   /* spacing before=200 */
+.header-text .contact a { color: #1155cc; text-decoration: underline; }
+
+/* ---- Summary: 10pt, ind left=-180 firstLine=0, justified ---- */
+[data-id="summary"] { font-size: 10pt; margin: 10pt 0 0 -9pt;  /* +empty para after=200 */ text-indent: 0; clear: both; }
+
+/* ---- Section headers (Heading1): Spectral ExtraBold 13pt, ind left=-180 ---- */
+h1 {
+  font-family: "Spectral ExtraBold", serif; font-weight: 700; font-size: 13pt;
+  margin: 6pt 0 0 -9pt; text-align: left;
+}
+/* The empty Heading1 after each section title holds a Word horizontal rule (o:hr) */
+hr.section-rule { border: 0; border-top: 0.75pt solid #9a9a9a; margin: 1pt 0 3pt -13.5pt; }
+
+/* ---- Role lines (Heading2): bold 13pt, right tab at 10368 twips for the date ---- */
+h2 { font-family: "Spectral", serif; font-weight: 700; font-size: 13pt; margin: 4pt 0 0 0; }
+
+/* ---- Project lines (Heading3): bold 10pt, ind left=90 hanging=270 -> starts -9pt ---- */
+h3 { font-family: "Spectral", serif; font-weight: 700; font-size: 10pt; margin: 3pt 0 0 -9pt; text-align: left; }
+
+/* Role/education lines: right tab stop at 518.4pt of 535.3pt width; date never wraps */
+.dated {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 4pt;
+  padding-right: 16.9pt; margin-left: -9pt; text-align: left;
+}
+.dated .date { white-space: nowrap; flex-shrink: 0; }
+.dated .role { white-space: nowrap; }
+
+/* ---- Other paragraphs (skills lines etc.) use docDefaults hanging indent ---- */
+p { margin: 1pt 0 1pt 4.5pt; text-indent: -13.5pt; }
+
+/* ---- Bullets: numbering.xml abstractNum 2 lvl0 = "●" in Spectral SemiBold, ind left=360 hanging=360 ---- */
+ul { margin: 0; padding-left: 18pt; list-style-type: "\25CF   "; }
+li { margin: 0 0 1pt 0; }
+li p { margin: 0; text-indent: 0; }   /* pandoc wraps loose-list items in <p>; keep them off the hanging indent */
+li::marker { font-family: "Spectral SemiBold", serif; }
+
+strong { font-weight: 700; }
+em { font-style: italic; }

@@ -1,0 +1,21 @@
+# Tools and build output
+venv/
+bin/
+out/
+tmp/
+__pycache__/
+*.pdf
+
+# Personal data - each has a committed *.example version
+profile.json
+cv_master.md
+master_cv.html
+skills_inventory.md
+template_assets/
+usage_log.tsv
+
+# Personal notes
+command_prmpt.txt
+commands.txt
+CLAUDE-generalChat-bulletPoint.md
+PREFLIGHT-generalChat-bulletPoint.md
