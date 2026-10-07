@@ -42,8 +42,8 @@ The system prompt in `tailor.py` sets strict rules, and local checks back them u
 ## Setup
 
 ```bash
-git clone <this-repo-url> ClaudeCVTailor
-cd ClaudeCVTailor
+git clone https://github.com/nidhicj/claude-cv-tailor.git
+cd claude-cv-tailor
 python -m venv venv
 venv/bin/pip install -r requirements.txt
 
